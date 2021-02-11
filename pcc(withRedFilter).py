@@ -1,0 +1,85 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Dec 27 13:19:15 2020
+
+@author: vargh
+"""
+# This one includes major downsampling
+
+
+import cv2
+
+from skimage.filters import threshold_otsu
+from pandas import DataFrame, Series  
+import numpy as np
+from timeit import default_timer as timer
+from skimage.registration import phase_cross_correlation
+import turtle
+import matplotlib.pyplot as plt
+
+# Takes two frames, calculates the phase cross correlation between them and outputs displacement
+def calcdisp(frame1, frame2):       
+    detected_shift = cv2.phaseCorrelate(frame2, frame1) # phase cross correlation algorithm
+    tmp = [detected_shift[0][0], detected_shift[0][1]] # store x,y displacement
+    return tmp
+
+vid = cv2.VideoCapture(0) # Starts video capture object
+
+# Initializations
+iteration = 0 
+prevFrame = 0
+dstep = np.empty([1,2])
+totD= np.array([[0,0]])
+time = [0]
+start = timer()
+
+#gpuframe1 = cv2.cuda_GpuMat() (Could not get gpu acceleration to work)
+#gpuframe2 = cv2.cuda_GpuMat()
+currentLoc = turtle.Turtle() # Initializes turtle for visualization
+
+
+while(True):
+    # Capture the video frame by frame
+
+    ret, frame = vid.read() # get frame
+   
+    #frameShape = frame.shape #?
+     
+    im = cv2.resize(frame, None, fx=0.1, fy=0.1) # decimate quality of image by resizing
+    
+    im[:, :, 1] = 0
+    im[:, :, 2] = 0
+      
+    bw_img = cv2.cvtColor(np.float32(im), cv2.COLOR_RGB2GRAY) # convert to grayscale
+#    gpuframe1.upload(bw_img) (gpu acceleration, doesn't work)
+   
+    if iteration > 3: # waits till there are sufficient frames to calculate
+        calcdisp(bw_img, prevFrame)
+    if iteration > 15: # allows program to 'warm up'. In initial tests, initial measurements were not accurate
+        tmp = calcdisp(bw_img, prevFrame) # raw displacement data
+        dstep = np.vstack((dstep, tmp)) # stacks the displacement step data just recieved
+        time = np.vstack((time, timer()-start)) # stacks the time data
+        
+        
+        totD = np.vstack((totD, np.sum(dstep, axis=0))) # sums displacement steps to calculate total displacement
+        
+        # updates turtle
+        currentLoc.sety(totD[iteration-15, 1]*10)
+        currentLoc.setx(totD[iteration-15, 0]*10)
+        
+    prevFrame = bw_img # sets current frame as previous frame
+#    gpuframe2.upload(prevFrame)
+    iteration = iteration + 1 #increases iteration
+    print(iteration,timer()-start) # prints time (for debugging/optimization purposes)
+
+# After the loop release the capture object
+
+vid.release()
+
+# Destroy all the windows
+
+
+
+    
+    
+
