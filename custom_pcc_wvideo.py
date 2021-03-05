@@ -18,25 +18,33 @@ import time as t
 
 # Takes two frames, calculates the phase cross correlation between them and outputs displacement
 def calcdisp(imshape, frame1, frame2):       
-    f1 = np.fft.fft2(frame1)   
+    tmp = np.array([0,0])
+    
+    f1 = np.fft.fft2(frame1) 
     f2 = np.fft.fft2(frame2)
     
     cross_power_spect = np.multiply(f1 , np.conjugate(f2))/abs(np.multiply(f1, np.conjugate(f2)))
     
     peakgraph = np.fft.ifft2(cross_power_spect)
     
-    detected_shift = np.where(peakgraph == np.amax(peakgraph))    
+    detected_shift = np.where(peakgraph == np.amax(peakgraph))   
     
-    if detected_shift[0][0] < imshape[1]/2 and detected_shift[1][0] < imshape[0]/2:
-        tmp = [detected_shift[1][0], detected_shift[0][0]] # store x,y displacement
+    if detected_shift[0][0] > imshape[0]//2:
+        tmp[1] = detected_shift[0][0] - imshape[0]
     else:
-        tmp = [detected_shift[1][0], detected_shift[0][0]] - np.flip(imshape)
+        tmp[1] = detected_shift[0][0]
+    
+    if detected_shift[1][0] > imshape[1]//2:
+        tmp[0] = detected_shift[1][0] - imshape[1]
+    else:
+        tmp[0] = detected_shift[1][0]
         
-    if abs(tmp[0]) > 30:
-        tmp[0] = 1
-
-    if abs(tmp[1]) > 30:
-        tmp[1] = 0
+        
+    if abs(tmp[0]) > 10:
+        tmp[0] = 0
+    if abs(tmp[1]) > 10:
+        tmp[1] = 1
+    
     
     return tmp
 
@@ -94,14 +102,15 @@ while(True):
         totD = np.vstack((totD, np.sum(dstep, axis=0))) # sums displacement steps to calculate total displacement
         
         # updates turtle
-        currentLoc.sety(totD[iteration-15, 1]*.5)
-        currentLoc.setx(totD[iteration-15, 0]*.5)
+        currentLoc.sety(totD[iteration-15, 1]*.35)
+        currentLoc.setx(totD[iteration-15, 0]*.35)
         
     prevFrame = bw_img # sets current frame as previous frame
 #    gpuframe2.upload(prevFrame)
     iteration = iteration + 1 #increases iteration
     print(iteration,timer()-start) # prints time (for debugging/optimization purposes)
     cv2.imshow('frame2',res)
+    cv2.imshow('frame3', im)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
@@ -114,5 +123,8 @@ vid.release()
 
 
     
+    
+
+
     
 
