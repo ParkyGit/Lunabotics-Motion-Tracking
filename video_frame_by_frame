@@ -1,0 +1,114 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 29 20:44:24 2021
+
+@author: vargh
+"""
+import cv2
+
+from skimage.filters import threshold_otsu
+from pandas import DataFrame, Series  
+import numpy as np
+from timeit import default_timer as timer
+from skimage.registration import phase_cross_correlation
+import turtle
+import matplotlib.pyplot as plt
+import time as t
+
+
+cap = cv2.VideoCapture('C:/Users/vargh/Desktop/IMG_2509.MOV')
+
+total_frames = cap.get(7)
+cap.set(1, 99)
+ret, frame = cap.read()
+cap.set(1, 100)
+ret, frame2 = cap.read()
+
+dstep = np.empty([1,2])
+totD= np.array([[0,0]])
+time = [0]
+
+def calcdisp(imshape, frame1, frame2):       
+    
+    coolwarm = plt.get_cmap('coolwarm')
+    tmp = np.array([0,0])
+    
+    f1 = np.fft.fft2(frame1) # fast fourier transforms of previous frame
+    f2 = np.fft.fft2(frame2) # fast fourier transforms of current frame
+    
+
+    
+    cross_power_spect = np.multiply(f1 , np.conjugate(f2))/abs(np.multiply(f1, np.conjugate(f2))) # "cross power spectrum", which is multiplying the FFTs element-wise and normalizing
+    
+    peakgraph = np.fft.ifft2(cross_power_spect) # inverse FFT
+    
+    detected_shift = np.where(peakgraph == np.amax(peakgraph)) # Find peaks in inverse FFT
+    
+    # Due to how the output structure of the FFT, negative translations are in the latter half of the output matrix
+    # These if statements find the direction of the translation and stores it with the correct magnitude
+    if detected_shift[0][0] > imshape[0]//2:
+        tmp[1] = detected_shift[0][0] - imshape[0]
+    else:
+        tmp[1] = detected_shift[0][0]
+    
+    if detected_shift[1][0] > imshape[1]//2:
+        tmp[0] = detected_shift[1][0] - imshape[1]
+    else:
+        tmp[0] = detected_shift[1][0]
+        
+    
+    plt.imshow(abs(f1), cmap = 'gray')
+    plt.title('FFT of Prev Frame')
+    plt.show()
+    plt.imshow(abs(f2), cmap = 'gray')
+    plt.title('FFT of Current Frame')
+    plt.show()
+    
+    plt.imshow(abs(cross_power_spect), cmap = 'gray')
+    plt.title('Cross Power Spectrum')
+    plt.show()
+        
+    plt.imshow(abs(peakgraph), cmap = 'gray')
+    plt.title('Peak Graph')
+    plt.show()
+    return tmp
+     
+im = cv2.resize(frame, None, fx=.5, fy=.5) # decimate quality of image by resizing
+im2 = cv2.resize(frame2, None, fx=.5, fy=.5)
+ 
+hsv = cv2.cvtColor(im, cv2.COLOR_BGR2HSV) 
+hsv2 = cv2.cvtColor(im2, cv2.COLOR_BGR2HSV) 
+    
+lower_blue = np.array([36,140,140])
+upper_blue = np.array([86,255,255])
+    
+mask = cv2.inRange(hsv, lower_blue, upper_blue)
+mask2 = cv2.inRange(hsv2, lower_blue, upper_blue)
+
+res = cv2.bitwise_and(im,im, mask= mask)
+res2 = cv2.bitwise_and(im2,im2, mask= mask2)
+
+proc_im = cv2.cvtColor(res, cv2.COLOR_HSV2RGB)
+proc_im2 = cv2.cvtColor(res2, cv2.COLOR_HSV2RGB)
+       
+bw_img = cv2.cvtColor(np.float32(proc_im), cv2.COLOR_RGB2GRAY)
+prevFrame = cv2.cvtColor(np.float32(proc_im2), cv2.COLOR_RGB2GRAY)
+imshape = np.array(bw_img.shape)
+
+tmp = calcdisp(imshape, bw_img, prevFrame) # raw displacement data
+
+plt.imshow(frame)
+plt.title('Current Frame')
+plt.show()
+plt.imshow(frame2)
+plt.title('Previous Frame')
+plt.show()
+
+plt.imshow(res)
+plt.title('Current Frame')
+plt.show()
+plt.imshow(res2)
+plt.title('Previous Frame')
+plt.show()
+
+print('Displacement [x y] = [%d %d]'%(tmp[0], tmp[1]))
