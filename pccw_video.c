@@ -1448,7 +1448,7 @@ static PyObject *__pyx_codeobj__3;
 /* Late includes */
 
 /* "pccw_video.py":28
- *
+ * 
  * # Takes two frames, calculates the phase cross correlation between them and outputs displacement
  * def calcdisp(frame1, frame2):             # <<<<<<<<<<<<<<
  *     detected_shift = cv2.phaseCorrelate(frame2, frame1)# phase cross correlation algorithm
@@ -1680,7 +1680,7 @@ static PyObject *__pyx_pf_10pccw_video_calcdisp(CYTHON_UNUSED PyObject *__pyx_se
  *     else:
  *         tmp = [0,0]             # <<<<<<<<<<<<<<
  *     return tmp
- *
+ * 
  */
   /*else*/ {
     __pyx_t_1 = PyList_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
@@ -1700,7 +1700,7 @@ static PyObject *__pyx_pf_10pccw_video_calcdisp(CYTHON_UNUSED PyObject *__pyx_se
  *     else:
  *         tmp = [0,0]
  *     return tmp             # <<<<<<<<<<<<<<
- *
+ * 
  * vid = cv2.VideoCapture(0) # Starts video capture object
  */
   __Pyx_XDECREF(__pyx_r);
@@ -1709,7 +1709,7 @@ static PyObject *__pyx_pf_10pccw_video_calcdisp(CYTHON_UNUSED PyObject *__pyx_se
   goto __pyx_L0;
 
   /* "pccw_video.py":28
- *
+ * 
  * # Takes two frames, calculates the phase cross correlation between them and outputs displacement
  * def calcdisp(frame1, frame2):             # <<<<<<<<<<<<<<
  *     detected_shift = cv2.phaseCorrelate(frame2, frame1)# phase cross correlation algorithm
@@ -1865,7 +1865,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
   /* "pccw_video.py":28
- *
+ * 
  * # Takes two frames, calculates the phase cross correlation between them and outputs displacement
  * def calcdisp(frame1, frame2):             # <<<<<<<<<<<<<<
  *     detected_shift = cv2.phaseCorrelate(frame2, frame1)# phase cross correlation algorithm
@@ -1878,9 +1878,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pccw_video.py":36
  *     return tmp
- *
+ * 
  * vid = cv2.VideoCapture(0) # Starts video capture object             # <<<<<<<<<<<<<<
- *
+ * 
  * # Initializations
  */
   __pyx_tuple__4 = PyTuple_Pack(1, __pyx_int_0); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 36, __pyx_L1_error)
@@ -1891,7 +1891,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * #gpuframe2 = cv2.cuda_GpuMat()
  * currentLoc = turtle.Turtle() # Initializes turtle for visualization
  * cap = cv2.VideoCapture('C:/Users/vargh/Desktop/IMG_2509.MOV')             # <<<<<<<<<<<<<<
- *
+ * 
  * while(True):
  */
   __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_s_C_Users_vargh_Desktop_IMG_2509_M); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 49, __pyx_L1_error)
@@ -2201,10 +2201,10 @@ if (!__Pyx_RefNanny) {
   #endif
 
   /* "pccw_video.py":17
- *
- *
+ * 
+ * 
  * import cv2             # <<<<<<<<<<<<<<
- *
+ * 
  * from skimage.filters import threshold_otsu
  */
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_cv2, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
@@ -2214,7 +2214,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pccw_video.py":19
  * import cv2
- *
+ * 
  * from skimage.filters import threshold_otsu             # <<<<<<<<<<<<<<
  * from pandas import DataFrame, Series
  * import numpy as np
@@ -2234,7 +2234,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "pccw_video.py":20
- *
+ * 
  * from skimage.filters import threshold_otsu
  * from pandas import DataFrame, Series             # <<<<<<<<<<<<<<
  * import numpy as np
@@ -2320,7 +2320,7 @@ if (!__Pyx_RefNanny) {
  * from skimage.registration import phase_cross_correlation
  * import turtle             # <<<<<<<<<<<<<<
  * import matplotlib.pyplot as plt
- *
+ * 
  */
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_turtle, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -2331,7 +2331,7 @@ if (!__Pyx_RefNanny) {
  * from skimage.registration import phase_cross_correlation
  * import turtle
  * import matplotlib.pyplot as plt             # <<<<<<<<<<<<<<
- *
+ * 
  * # Takes two frames, calculates the phase cross correlation between them and outputs displacement
  */
   __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
@@ -2346,7 +2346,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "pccw_video.py":28
- *
+ * 
  * # Takes two frames, calculates the phase cross correlation between them and outputs displacement
  * def calcdisp(frame1, frame2):             # <<<<<<<<<<<<<<
  *     detected_shift = cv2.phaseCorrelate(frame2, frame1)# phase cross correlation algorithm
@@ -2359,9 +2359,9 @@ if (!__Pyx_RefNanny) {
 
   /* "pccw_video.py":36
  *     return tmp
- *
+ * 
  * vid = cv2.VideoCapture(0) # Starts video capture object             # <<<<<<<<<<<<<<
- *
+ * 
  * # Initializations
  */
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_cv2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
@@ -2376,7 +2376,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "pccw_video.py":39
- *
+ * 
  * # Initializations
  * iteration = 0             # <<<<<<<<<<<<<<
  * prevFrame = 0
@@ -2457,7 +2457,7 @@ if (!__Pyx_RefNanny) {
  * totD= np.array([[0,0]])
  * time = [0]             # <<<<<<<<<<<<<<
  * start = timer()
- *
+ * 
  */
   __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -2471,7 +2471,7 @@ if (!__Pyx_RefNanny) {
  * totD= np.array([[0,0]])
  * time = [0]
  * start = timer()             # <<<<<<<<<<<<<<
- *
+ * 
  * #gpuframe1 = cv2.cuda_GpuMat() (Could not get gpu acceleration to work)
  */
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_timer); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 44, __pyx_L1_error)
@@ -2487,7 +2487,7 @@ if (!__Pyx_RefNanny) {
  * #gpuframe2 = cv2.cuda_GpuMat()
  * currentLoc = turtle.Turtle() # Initializes turtle for visualization             # <<<<<<<<<<<<<<
  * cap = cv2.VideoCapture('C:/Users/vargh/Desktop/IMG_2509.MOV')
- *
+ * 
  */
   __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_turtle); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -2504,7 +2504,7 @@ if (!__Pyx_RefNanny) {
  * #gpuframe2 = cv2.cuda_GpuMat()
  * currentLoc = turtle.Turtle() # Initializes turtle for visualization
  * cap = cv2.VideoCapture('C:/Users/vargh/Desktop/IMG_2509.MOV')             # <<<<<<<<<<<<<<
- *
+ * 
  * while(True):
  */
   __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_cv2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
@@ -2520,18 +2520,18 @@ if (!__Pyx_RefNanny) {
 
   /* "pccw_video.py":51
  * cap = cv2.VideoCapture('C:/Users/vargh/Desktop/IMG_2509.MOV')
- *
+ * 
  * while(True):             # <<<<<<<<<<<<<<
  *     # Capture the video frame by frame
- *
+ * 
  */
   while (1) {
 
     /* "pccw_video.py":54
  *     # Capture the video frame by frame
- *
+ * 
  *     ret, frame = cap.read() # get frame             # <<<<<<<<<<<<<<
- *
+ * 
  *     #frameShape = frame.shape #?
  */
     __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_cap); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
@@ -2564,11 +2564,11 @@ if (!__Pyx_RefNanny) {
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
-        __pyx_t_2 = PyTuple_GET_ITEM(sequence, 0);
-        __pyx_t_3 = PyTuple_GET_ITEM(sequence, 1);
+        __pyx_t_2 = PyTuple_GET_ITEM(sequence, 0); 
+        __pyx_t_3 = PyTuple_GET_ITEM(sequence, 1); 
       } else {
-        __pyx_t_2 = PyList_GET_ITEM(sequence, 0);
-        __pyx_t_3 = PyList_GET_ITEM(sequence, 1);
+        __pyx_t_2 = PyList_GET_ITEM(sequence, 0); 
+        __pyx_t_3 = PyList_GET_ITEM(sequence, 1); 
       }
       __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(__pyx_t_3);
@@ -2607,9 +2607,9 @@ if (!__Pyx_RefNanny) {
 
     /* "pccw_video.py":58
  *     #frameShape = frame.shape #?
- *
+ * 
  *     im = cv2.resize(frame, None, fx=.5, fy=.5) # decimate quality of image by resizing             # <<<<<<<<<<<<<<
- *
+ * 
  *     hsv = cv2.cvtColor(im, cv2.COLOR_BGR2HSV)
  */
     __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_cv2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
@@ -2641,9 +2641,9 @@ if (!__Pyx_RefNanny) {
 
     /* "pccw_video.py":60
  *     im = cv2.resize(frame, None, fx=.5, fy=.5) # decimate quality of image by resizing
- *
+ * 
  *     hsv = cv2.cvtColor(im, cv2.COLOR_BGR2HSV)             # <<<<<<<<<<<<<<
- *
+ * 
  *     lower_blue = np.array([36,140,140])
  */
     __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_cv2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
@@ -2712,10 +2712,10 @@ if (!__Pyx_RefNanny) {
 
     /* "pccw_video.py":62
  *     hsv = cv2.cvtColor(im, cv2.COLOR_BGR2HSV)
- *
+ * 
  *     lower_blue = np.array([36,140,140])             # <<<<<<<<<<<<<<
  *     upper_blue = np.array([86,255,255])
- *
+ * 
  */
     __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -2753,10 +2753,10 @@ if (!__Pyx_RefNanny) {
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
     /* "pccw_video.py":63
- *
+ * 
  *     lower_blue = np.array([36,140,140])
  *     upper_blue = np.array([86,255,255])             # <<<<<<<<<<<<<<
- *
+ * 
  *     mask = cv2.inRange(hsv, lower_blue, upper_blue)
  */
     __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 63, __pyx_L1_error)
@@ -2796,7 +2796,7 @@ if (!__Pyx_RefNanny) {
 
     /* "pccw_video.py":65
  *     upper_blue = np.array([86,255,255])
- *
+ * 
  *     mask = cv2.inRange(hsv, lower_blue, upper_blue)             # <<<<<<<<<<<<<<
  *     res = cv2.bitwise_and(im,im, mask= mask)
  *     proc_im = cv2.cvtColor(res, cv2.COLOR_HSV2RGB)
@@ -2870,11 +2870,11 @@ if (!__Pyx_RefNanny) {
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
     /* "pccw_video.py":66
- *
+ * 
  *     mask = cv2.inRange(hsv, lower_blue, upper_blue)
  *     res = cv2.bitwise_and(im,im, mask= mask)             # <<<<<<<<<<<<<<
  *     proc_im = cv2.cvtColor(res, cv2.COLOR_HSV2RGB)
- *
+ * 
  */
     __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_cv2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
@@ -2911,8 +2911,8 @@ if (!__Pyx_RefNanny) {
  *     mask = cv2.inRange(hsv, lower_blue, upper_blue)
  *     res = cv2.bitwise_and(im,im, mask= mask)
  *     proc_im = cv2.cvtColor(res, cv2.COLOR_HSV2RGB)             # <<<<<<<<<<<<<<
- *
- *
+ * 
+ * 
  */
     __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_cv2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 67, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
@@ -2979,11 +2979,11 @@ if (!__Pyx_RefNanny) {
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
     /* "pccw_video.py":70
- *
- *
+ * 
+ * 
  *     bw_img = cv2.cvtColor(np.float32(proc_im), cv2.COLOR_RGB2GRAY) # convert to grayscale             # <<<<<<<<<<<<<<
  * #    gpuframe1.upload(bw_img) (gpu acceleration, doesn't work)
- *
+ * 
  */
     __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_cv2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -3072,7 +3072,7 @@ if (!__Pyx_RefNanny) {
 
     /* "pccw_video.py":73
  * #    gpuframe1.upload(bw_img) (gpu acceleration, doesn't work)
- *
+ * 
  *     if iteration > 3: # waits till there are sufficient frames to calculate             # <<<<<<<<<<<<<<
  *         calcdisp(bw_img, prevFrame)
  *     if iteration > 15: # allows program to 'warm up'. In initial tests, initial measurements were not accurate
@@ -3086,7 +3086,7 @@ if (!__Pyx_RefNanny) {
     if (__pyx_t_10) {
 
       /* "pccw_video.py":74
- *
+ * 
  *     if iteration > 3: # waits till there are sufficient frames to calculate
  *         calcdisp(bw_img, prevFrame)             # <<<<<<<<<<<<<<
  *     if iteration > 15: # allows program to 'warm up'. In initial tests, initial measurements were not accurate
@@ -3151,7 +3151,7 @@ if (!__Pyx_RefNanny) {
 
       /* "pccw_video.py":73
  * #    gpuframe1.upload(bw_img) (gpu acceleration, doesn't work)
- *
+ * 
  *     if iteration > 3: # waits till there are sufficient frames to calculate             # <<<<<<<<<<<<<<
  *         calcdisp(bw_img, prevFrame)
  *     if iteration > 15: # allows program to 'warm up'. In initial tests, initial measurements were not accurate
@@ -3243,7 +3243,7 @@ if (!__Pyx_RefNanny) {
  *         tmp = calcdisp(bw_img, prevFrame) # raw displacement data
  *         dstep = np.vstack((dstep, tmp)) # stacks the displacement step data just recieved             # <<<<<<<<<<<<<<
  *         time = np.vstack((time, timer()-start)) # stacks the time data
- *
+ * 
  */
       __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
@@ -3285,8 +3285,8 @@ if (!__Pyx_RefNanny) {
  *         tmp = calcdisp(bw_img, prevFrame) # raw displacement data
  *         dstep = np.vstack((dstep, tmp)) # stacks the displacement step data just recieved
  *         time = np.vstack((time, timer()-start)) # stacks the time data             # <<<<<<<<<<<<<<
- *
- *
+ * 
+ * 
  */
       __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 78, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
@@ -3346,10 +3346,10 @@ if (!__Pyx_RefNanny) {
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
       /* "pccw_video.py":81
- *
- *
+ * 
+ * 
  *         totD = np.vstack((totD, np.sum(dstep, axis=0))) # sums displacement steps to calculate total displacement             # <<<<<<<<<<<<<<
- *
+ * 
  *         # updates turtle
  */
       __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_np); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 81, __pyx_L1_error)
@@ -3407,11 +3407,11 @@ if (!__Pyx_RefNanny) {
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
       /* "pccw_video.py":84
- *
+ * 
  *         # updates turtle
  *         currentLoc.sety(totD[iteration-15, 1]*.2)             # <<<<<<<<<<<<<<
  *         currentLoc.setx(totD[iteration-15, 0]*.2)
- *
+ * 
  */
       __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_currentLoc); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 84, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
@@ -3462,7 +3462,7 @@ if (!__Pyx_RefNanny) {
  *         # updates turtle
  *         currentLoc.sety(totD[iteration-15, 1]*.2)
  *         currentLoc.setx(totD[iteration-15, 0]*.2)             # <<<<<<<<<<<<<<
- *
+ * 
  *     prevFrame = bw_img # sets current frame as previous frame
  */
       __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_currentLoc); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 85, __pyx_L1_error)
@@ -3521,7 +3521,7 @@ if (!__Pyx_RefNanny) {
 
     /* "pccw_video.py":87
  *         currentLoc.setx(totD[iteration-15, 0]*.2)
- *
+ * 
  *     prevFrame = bw_img # sets current frame as previous frame             # <<<<<<<<<<<<<<
  * #    gpuframe2.upload(prevFrame)
  *     iteration = iteration + 1 #increases iteration
@@ -3657,7 +3657,7 @@ if (!__Pyx_RefNanny) {
  *     cv2.imshow('frame2',res)
  *     if cv2.waitKey(50) & 0xFF == ord('q'):             # <<<<<<<<<<<<<<
  *         break
- *
+ * 
  */
     __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_cv2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 92, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
@@ -3693,7 +3693,7 @@ if (!__Pyx_RefNanny) {
  *     cv2.imshow('frame2',res)
  *     if cv2.waitKey(50) & 0xFF == ord('q'):
  *         break             # <<<<<<<<<<<<<<
- *
+ * 
  * # After the loop release the capture object
  */
       goto __pyx_L3_break;
@@ -3703,7 +3703,7 @@ if (!__Pyx_RefNanny) {
  *     cv2.imshow('frame2',res)
  *     if cv2.waitKey(50) & 0xFF == ord('q'):             # <<<<<<<<<<<<<<
  *         break
- *
+ * 
  */
     }
   }
@@ -3711,9 +3711,9 @@ if (!__Pyx_RefNanny) {
 
   /* "pccw_video.py":97
  * # After the loop release the capture object
- *
+ * 
  * vid.release()             # <<<<<<<<<<<<<<
- *
+ * 
  * # Destroy all the windows
  */
   __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_vid); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 97, __pyx_L1_error)
@@ -5297,8 +5297,8 @@ static PyObject* __Pyx_PyInt_SubtractObjC(PyObject *op1, PyObject *op2, CYTHON_U
                 llx = lla - llb;
             return PyLong_FromLongLong(llx);
 #endif
-
-
+        
+        
     }
     #endif
     if (PyFloat_CheckExact(op1)) {
@@ -5450,8 +5450,8 @@ static PyObject* __Pyx_PyInt_AddObjC(PyObject *op1, PyObject *op2, CYTHON_UNUSED
                 llx = lla + llb;
             return PyLong_FromLongLong(llx);
 #endif
-
-
+        
+        
     }
     #endif
     if (PyFloat_CheckExact(op1)) {
@@ -5637,8 +5637,8 @@ static PyObject* __Pyx_PyInt_AndObjC(PyObject *op1, PyObject *op2, CYTHON_UNUSED
                 llx = lla & llb;
             return PyLong_FromLongLong(llx);
 #endif
-
-
+        
+        
     }
     #endif
     return (inplace ? PyNumber_InPlaceAnd : PyNumber_And)(op1, op2);

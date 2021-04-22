@@ -26,23 +26,23 @@ offset_image = np.float32(offset_image)
 dispbuiltin = cv2.phaseCorrelate(image, offset_image)[0]
 print("Calculated Offset (Built In) - (y,x): %f, %f"%(dispbuiltin[1], dispbuiltin[0]))
 
-f1 = np.fft.fft2(image)   
+f1 = np.fft.fft2(image)
 f2 = np.fft.fft2(offset_image)
-    
+
 cross_power_spect = np.multiply(f1 , np.conjugate(f2))/abs(np.multiply(f1, np.conjugate(f2)))
-    
+
 peakgraph = np.fft.ifft2(cross_power_spect)
-    
+
 detected_shift = np.where(peakgraph == np.amax(peakgraph))
 
 if detected_shift[0][0] > cols//2:
     y_shift = detected_shift[0][0] - cols
 else:
     y_shift = detected_shift[0][0]
-    
+
 if detected_shift[1][0] > rows//2:
     x_shift = detected_shift[1][0] - rows
 else:
     x_shift = detected_shift[1][0]
-    
+
 print("Calculated Offset (Custom) - (y,x): %f, %f"%(y_shift, x_shift))
