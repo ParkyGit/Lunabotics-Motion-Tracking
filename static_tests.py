@@ -46,3 +46,6 @@ else:
     x_shift = detected_shift[1][0]
 
 print("Calculated Offset (Custom) - (y,x): %f, %f"%(y_shift, x_shift))
+
+
+input('Press ENTER to exit')
