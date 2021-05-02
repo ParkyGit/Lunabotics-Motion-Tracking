@@ -5,7 +5,7 @@
     "distutils": {
         "name": "centroid_finder",
         "sources": [
-            "centroid_finder.py"
+            "centroid_finder.pyx"
         ]
     },
     "module_name": "centroid_finder"
@@ -825,7 +825,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "centroid_finder.py",
+  "centroid_finder.pyx",
 };
 
 /*--- Type declarations ---*/
@@ -1351,7 +1351,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "centroid_finder.py":18
+  /* "centroid_finder.pyx":18
  * import turtle
  * 
  * img = cv.imread(cv.samples.findFile("centroid_test"))             # <<<<<<<<<<<<<<
@@ -1362,7 +1362,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "centroid_finder.py":20
+  /* "centroid_finder.pyx":20
  * img = cv.imread(cv.samples.findFile("centroid_test"))
  * if img is None:
  *     sys.exit("Could not read the image.")             # <<<<<<<<<<<<<<
@@ -1373,7 +1373,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "centroid_finder.py":22
+  /* "centroid_finder.pyx":22
  *     sys.exit("Could not read the image.")
  * cv.imshow("Display window", img)
  * k = cv.waitKey(0)             # <<<<<<<<<<<<<<
@@ -1384,7 +1384,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "centroid_finder.py":38
+  /* "centroid_finder.pyx":38
  * 
  * # put text and highlight the center
  * cv.circle(img, (cX, cY), 5, (255, 255, 255), -1)             # <<<<<<<<<<<<<<
@@ -1689,7 +1689,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "centroid_finder.py":8
+  /* "centroid_finder.pyx":8
  * # This one includes major downsampling
  * 
  * import cv2 as cv             # <<<<<<<<<<<<<<
@@ -1701,7 +1701,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_cv, __pyx_t_1) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "centroid_finder.py":9
+  /* "centroid_finder.pyx":9
  * 
  * import cv2 as cv
  * import sys             # <<<<<<<<<<<<<<
@@ -1713,7 +1713,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_sys, __pyx_t_1) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "centroid_finder.py":11
+  /* "centroid_finder.pyx":11
  * import sys
  * 
  * from skimage.filters import threshold_otsu             # <<<<<<<<<<<<<<
@@ -1734,7 +1734,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "centroid_finder.py":12
+  /* "centroid_finder.pyx":12
  * 
  * from skimage.filters import threshold_otsu
  * from pandas import DataFrame, Series             # <<<<<<<<<<<<<<
@@ -1762,7 +1762,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "centroid_finder.py":13
+  /* "centroid_finder.pyx":13
  * from skimage.filters import threshold_otsu
  * from pandas import DataFrame, Series
  * import numpy as np             # <<<<<<<<<<<<<<
@@ -1774,7 +1774,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "centroid_finder.py":14
+  /* "centroid_finder.pyx":14
  * from pandas import DataFrame, Series
  * import numpy as np
  * from timeit import default_timer as timer             # <<<<<<<<<<<<<<
@@ -1795,7 +1795,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "centroid_finder.py":15
+  /* "centroid_finder.pyx":15
  * import numpy as np
  * from timeit import default_timer as timer
  * from skimage.registration import phase_cross_correlation             # <<<<<<<<<<<<<<
@@ -1816,7 +1816,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "centroid_finder.py":16
+  /* "centroid_finder.pyx":16
  * from timeit import default_timer as timer
  * from skimage.registration import phase_cross_correlation
  * import turtle             # <<<<<<<<<<<<<<
@@ -1828,7 +1828,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_turtle, __pyx_t_1) < 0) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "centroid_finder.py":18
+  /* "centroid_finder.pyx":18
  * import turtle
  * 
  * img = cv.imread(cv.samples.findFile("centroid_test"))             # <<<<<<<<<<<<<<
@@ -1858,7 +1858,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_img, __pyx_t_1) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "centroid_finder.py":19
+  /* "centroid_finder.pyx":19
  * 
  * img = cv.imread(cv.samples.findFile("centroid_test"))
  * if img is None:             # <<<<<<<<<<<<<<
@@ -1872,7 +1872,7 @@ if (!__Pyx_RefNanny) {
   __pyx_t_5 = (__pyx_t_4 != 0);
   if (__pyx_t_5) {
 
-    /* "centroid_finder.py":20
+    /* "centroid_finder.pyx":20
  * img = cv.imread(cv.samples.findFile("centroid_test"))
  * if img is None:
  *     sys.exit("Could not read the image.")             # <<<<<<<<<<<<<<
@@ -1889,7 +1889,7 @@ if (!__Pyx_RefNanny) {
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "centroid_finder.py":19
+    /* "centroid_finder.pyx":19
  * 
  * img = cv.imread(cv.samples.findFile("centroid_test"))
  * if img is None:             # <<<<<<<<<<<<<<
@@ -1898,7 +1898,7 @@ if (!__Pyx_RefNanny) {
  */
   }
 
-  /* "centroid_finder.py":21
+  /* "centroid_finder.pyx":21
  * if img is None:
  *     sys.exit("Could not read the image.")
  * cv.imshow("Display window", img)             # <<<<<<<<<<<<<<
@@ -1926,7 +1926,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "centroid_finder.py":22
+  /* "centroid_finder.pyx":22
  *     sys.exit("Could not read the image.")
  * cv.imshow("Display window", img)
  * k = cv.waitKey(0)             # <<<<<<<<<<<<<<
@@ -1944,7 +1944,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_k, __pyx_t_1) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "centroid_finder.py":25
+  /* "centroid_finder.pyx":25
  * 
  * # convert image to grayscale image
  * gray_image = cv.cvtColor(img, cv.COLOR_BGR2GRAY)             # <<<<<<<<<<<<<<
@@ -1978,7 +1978,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_gray_image, __pyx_t_6) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "centroid_finder.py":28
+  /* "centroid_finder.pyx":28
  * 
  * # convert the grayscale image to binary image
  * ret,thresh = cv.threshold(gray_image,127,255,0)             # <<<<<<<<<<<<<<
@@ -2061,7 +2061,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_thresh, __pyx_t_3) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "centroid_finder.py":31
+  /* "centroid_finder.pyx":31
  * 
  * # calculate moments of binary image
  * M = cv.moments(thresh)             # <<<<<<<<<<<<<<
@@ -2082,7 +2082,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_M, __pyx_t_2) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "centroid_finder.py":34
+  /* "centroid_finder.pyx":34
  * 
  * # calculate x,y coordinate of center
  * cX = int(M["m10"] / M["m00"])             # <<<<<<<<<<<<<<
@@ -2109,7 +2109,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_cX, __pyx_t_3) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "centroid_finder.py":35
+  /* "centroid_finder.pyx":35
  * # calculate x,y coordinate of center
  * cX = int(M["m10"] / M["m00"])
  * cY = int(M["m01"] / M["m00"])             # <<<<<<<<<<<<<<
@@ -2136,7 +2136,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_cY, __pyx_t_6) < 0) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "centroid_finder.py":38
+  /* "centroid_finder.pyx":38
  * 
  * # put text and highlight the center
  * cv.circle(img, (cX, cY), 5, (255, 255, 255), -1)             # <<<<<<<<<<<<<<
@@ -2185,7 +2185,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "centroid_finder.py":39
+  /* "centroid_finder.pyx":39
  * # put text and highlight the center
  * cv.circle(img, (cX, cY), 5, (255, 255, 255), -1)
  * cv.putText(img, "centroid", (cX - 25, cY - 25),cv.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)             # <<<<<<<<<<<<<<
@@ -2251,12 +2251,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "centroid_finder.py":42
+  /* "centroid_finder.pyx":42
  * 
  * # display the image
  * cv.imshow("Image", img)             # <<<<<<<<<<<<<<
  * cv.waitKey(0)
- * 
  */
   __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_cv); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
@@ -2279,12 +2278,10 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "centroid_finder.py":43
+  /* "centroid_finder.pyx":43
  * # display the image
  * cv.imshow("Image", img)
  * cv.waitKey(0)             # <<<<<<<<<<<<<<
- * 
- * 
  */
   __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_cv); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
@@ -2296,7 +2293,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "centroid_finder.py":1
+  /* "centroid_finder.pyx":1
  * """             # <<<<<<<<<<<<<<
  * Created on Sun Dec 27 13:19:15 2020
  * 
